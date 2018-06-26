@@ -9,20 +9,18 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
-public class GUI extends JFrame {
-	
+public class GUI extends JFrame
+{
 	private JPanel panel1 = new JPanel();
     private JButton[][] buttons = new JButton[8][8];
-
-
     private JLabel points;
     
-    public GUI() throws IOException {
+    public GUI() throws IOException
+    {
         setTitle("Tile Game");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         createContent();
-
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -30,12 +28,13 @@ public class GUI extends JFrame {
         setSize(500, 500);
     }
 
-    private void createContent() throws IOException {
+    private void createContent() throws IOException 
+    {
         createMenu();
 
         panel1.setLayout(new GridLayout(8, 8));
         add(panel1);
-
+        
         for (int height = 0; height < 8; height++) {
             for (int across = 0; across < 8; across++) {
                 JButton button = new JButton();
@@ -58,40 +57,43 @@ public class GUI extends JFrame {
         panel3.add(points);
     }
 
-    private void createMenu() {
+    private void createMenu() 
+    {
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
-
         JMenu menu = new JMenu("Game");
         menuBar.add(menu);
-
+        
         // New Game
         JMenuItem newGame = new JMenuItem("New Game");
         menu.add(newGame);
         menu.addSeparator();
     }
-
-
-
-    private class ButtonListener implements ActionListener {
+    
+    private class ButtonListener implements ActionListener
+    {
     	private JButton _useButton;
-        public ButtonListener(JButton button) {
+        public ButtonListener(JButton button)
+        {
 			this._useButton = button;
 		}
 
 		@Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) 
+		{
 			
         	double rando = (int)(Math.random() * 10) + 1;
         	if(rando == 1 || rando == 2 || rando == 3)
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/BethNew.bmp");
-            	try {
+            	try
+            	{
 					image = ImageIO.read(file);
 					_useButton.setIcon(new ImageIcon(image));
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+				} 
+            	catch (IOException e1)
+            	{
 					e1.printStackTrace();
 				}
         	} 
@@ -99,11 +101,13 @@ public class GUI extends JFrame {
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/NoahNew.bmp");
-            	try {
+            	try
+            	{
 					image = ImageIO.read(file);
 					_useButton.setIcon(new ImageIcon(image));
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+				}
+            	catch (IOException e1) 
+            	{
 					e1.printStackTrace();
 				}
         	}
@@ -111,11 +115,13 @@ public class GUI extends JFrame {
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/AndrewNew.bmp");
-            	try {
+            	try 
+            	{
 					image = ImageIO.read(file);
 					_useButton.setIcon(new ImageIcon(image));
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+				} 
+            	catch (IOException e1)
+            	{
 					e1.printStackTrace();
 				}
         	}
@@ -123,36 +129,29 @@ public class GUI extends JFrame {
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/ZachNew.bmp");
-            	try {
+            	try
+            	{
 					image = ImageIO.read(file);
 					_useButton.setIcon(new ImageIcon(image));
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+				}
+            	catch (IOException e1)
+            	{
 					e1.printStackTrace();
 				}
         	}
         }
     }
     
-
-
-        
-        
-
-        
-
-    
-
-    
-
-
-    public static void main(String[] args) throws IOException {
-        try {
+    public static void main(String[] args) throws IOException
+    {
+        try 
+        {
             UIManager.setLookAndFeel(new MetalLookAndFeel());
-        } catch (Exception e) {
+        }
+        catch (Exception e) 
+        {
             e.printStackTrace();
         }
-
         new GUI();
     }
 }
