@@ -29,73 +29,33 @@ public class GUI extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH); 
         setSize(500, 500);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-    // ------------------------------------------------------------------------
-    // GUI Setup
-    // ------------------------------------------------------------------------
 
     private void createContent() throws IOException {
         createMenu();
-        
-        // --------------------------------------------------------------------
-        // Main Grid (Board Buttons)
-        // --------------------------------------------------------------------
 
         panel1.setLayout(new GridLayout(8, 8));
         add(panel1);
 
         for (int height = 0; height < 8; height++) {
             for (int across = 0; across < 8; across++) {
-            	double rando = Math.random();
-            	if(rando % 10 == 1 || rando % 10 == 2 || rando % 10 == 3)
-            	{
-            		JButton button = new JButton();
-            		BufferedImage image = null;
-            		URL file = getClass().getResource("resources/BethNew.bmp");
-                	image = ImageIO.read(file);
-            		
-            	}
                 JButton button = new JButton();
                 button.setFont(new Font("Arial Unicode MS", Font.BOLD, 25));
-                button.addActionListener(new ButtonListener());
+                button.addActionListener(new ButtonListener(button));
 
                 panel1.add(button);
                 buttons[height][across] = button;
             }
-
         }
-        
-        
-        // --------------------------------------------------------------------
-        // Status Bar (Timers, Current Turn Label)
-        // --------------------------------------------------------------------
-
+        //Points panel bottom
         JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayout(1, 3));
         add(panel2, BorderLayout.SOUTH);
-
+        
         JPanel panel3 = new JPanel();
-
         panel2.add(panel3);
-
         points = new JLabel();
         panel3.add(new JLabel("Points:"));
         panel3.add(points);
-
-
-
-
     }
 
     private void createMenu() {
@@ -105,41 +65,72 @@ public class GUI extends JFrame {
         JMenu menu = new JMenu("Game");
         menuBar.add(menu);
 
-        // --------------------------------------------------------------------
         // New Game
-        // --------------------------------------------------------------------
-
         JMenuItem newGame = new JMenuItem("New Game");
         menu.add(newGame);
-
-
         menu.addSeparator();
-
- 
     }
 
 
 
     private class ButtonListener implements ActionListener {
+    	private JButton _useButton;
+        public ButtonListener(JButton button) {
+			this._useButton = button;
+		}
 
-        @Override
+		@Override
         public void actionPerformed(ActionEvent e) {
-            //----------Create Beth Button-----------
-            BufferedImage image = null;
-            try{
-            	URL file = getClass().getResource("resources/BethNew.bmp");
-            	image = ImageIO.read(file);
-            }catch(IOException ioex){
-            	System.err.println("load error: " + ioex.getMessage());
-            }
-            ImageIcon icon = new ImageIcon(image);
-            JButton bethButton = new JButton(icon);
-            panel1.add(bethButton);
-            //buttons[height][across] = bethButton;
-            //--------------End Beth Button Create------------
-        	
-        	
-        	
+			
+        	double rando = (int)(Math.random() * 10) + 1;
+        	if(rando == 1 || rando == 2 || rando == 3)
+        	{
+        		BufferedImage image = null;
+        		URL file = getClass().getResource("resources/BethNew.bmp");
+            	try {
+					image = ImageIO.read(file);
+					_useButton.setIcon(new ImageIcon(image));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        	} 
+        	else if(rando == 4 || rando == 5 || rando == 6)
+        	{
+        		BufferedImage image = null;
+        		URL file = getClass().getResource("resources/NoahNew.bmp");
+            	try {
+					image = ImageIO.read(file);
+					_useButton.setIcon(new ImageIcon(image));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        	}
+        	else if(rando == 7 || rando == 8 || rando == 9)
+        	{
+        		BufferedImage image = null;
+        		URL file = getClass().getResource("resources/AndrewNew.bmp");
+            	try {
+					image = ImageIO.read(file);
+					_useButton.setIcon(new ImageIcon(image));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        	}
+        	else
+        	{
+        		BufferedImage image = null;
+        		URL file = getClass().getResource("resources/ZachNew.bmp");
+            	try {
+					image = ImageIO.read(file);
+					_useButton.setIcon(new ImageIcon(image));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        	}
         }
     }
     
