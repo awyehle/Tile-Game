@@ -13,6 +13,7 @@ public class GUI extends JFrame
 {
 	private JPanel panel1 = new JPanel();
     private JButton[][] buttons = new JButton[8][8];
+    private String[][] saveStates = new String[8][8];
     private JLabel points;
     
     public GUI() throws IOException
@@ -30,6 +31,14 @@ public class GUI extends JFrame
 
     private void createContent() throws IOException 
     {
+    	URL fileBeth = getClass().getResource("resources/BethNew.bmp");
+    	URL fileNoah = getClass().getResource("resources/NoahNew.bmp");
+    	URL fileAndrew = getClass().getResource("resources/AndrewNew.bmp");
+    	URL fileZach = getClass().getResource("resources/ZachNew.bmp");
+    	BufferedImage bethImage = ImageIO.read(fileBeth);
+    	BufferedImage noahImage = ImageIO.read(fileNoah);
+    	BufferedImage andrewImage = ImageIO.read(fileAndrew);
+    	BufferedImage zachImage = ImageIO.read(fileZach);
         createMenu();
 
         panel1.setLayout(new GridLayout(8, 8));
