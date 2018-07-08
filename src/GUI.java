@@ -13,7 +13,7 @@ public class GUI extends JFrame
 {
 	private JPanel panel1 = new JPanel();
     private JButton[][] buttons = new JButton[8][8];
-    private String[][] saveStates = new String[8][8];
+    private char[][] saveStates = new char[8][8];
     private JLabel points;
     
     public GUI() throws IOException
@@ -44,14 +44,28 @@ public class GUI extends JFrame
         panel1.setLayout(new GridLayout(8, 8));
         add(panel1);
         
-        for (int height = 0; height < 8; height++) {
-            for (int across = 0; across < 8; across++) {
+        for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 8; x++) {
                 JButton button = new JButton();
                 button.setFont(new Font("Arial Unicode MS", Font.BOLD, 25));
-                button.addActionListener(new ButtonListener(button));
+                button.addActionListener(new ButtonListener(x, y));
+                int rando = (int)(Math.random() * 10) + 1;
 
+                switch(rando)
+                {
+                case 1:saveStates[x][y] = 'B'; break;
+                case 2:saveStates[x][y] = 'B'; break;
+                case 3:saveStates[x][y] = 'B'; break;
+                case 4:saveStates[x][y] = 'N'; break;
+                case 5:saveStates[x][y] = 'N'; break;
+                case 6:saveStates[x][y] = 'N'; break;
+                case 7:saveStates[x][y] = 'A'; break;
+                case 8:saveStates[x][y] = 'A'; break;
+                case 9:saveStates[x][y] = 'A'; break;
+                default:saveStates[x][y] = 'Z'; break;
+                }
                 panel1.add(button);
-                buttons[height][across] = button;
+                buttons[x][y] = button;
             }
         }
         //Points panel bottom
@@ -81,72 +95,78 @@ public class GUI extends JFrame
     
     private class ButtonListener implements ActionListener
     {
-    	private JButton _useButton;
-        public ButtonListener(JButton button)
+    	private int x;
+    	private int y;
+    	
+        public ButtonListener(int x, int y)
         {
-			this._useButton = button;
+			this.x = x;
+			this.y = y;
 		}
 
 		@Override
         public void actionPerformed(ActionEvent e) 
 		{
-			
-        	double rando = (int)(Math.random() * 10) + 1;
-        	if(rando == 1 || rando == 2 || rando == 3)
+        	if(saveStates[x][y] == 'B')
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/BethNew.bmp");
             	try
             	{
 					image = ImageIO.read(file);
-					_useButton.setIcon(new ImageIcon(image));
+					buttons[x][y].setIcon(new ImageIcon(image));
 				} 
             	catch (IOException e1)
             	{
 					e1.printStackTrace();
 				}
         	} 
-        	else if(rando == 4 || rando == 5 || rando == 6)
+        	else if(saveStates[x][y] == 'N')
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/NoahNew.bmp");
             	try
             	{
 					image = ImageIO.read(file);
-					_useButton.setIcon(new ImageIcon(image));
+					buttons[x][y].setIcon(new ImageIcon(image));
 				}
             	catch (IOException e1) 
             	{
 					e1.printStackTrace();
 				}
         	}
-        	else if(rando == 7 || rando == 8 || rando == 9)
+        	else if(saveStates[x][y] == 'A')
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/AndrewNew.bmp");
             	try 
             	{
 					image = ImageIO.read(file);
-					_useButton.setIcon(new ImageIcon(image));
+					buttons[x][y].setIcon(new ImageIcon(image));
 				} 
             	catch (IOException e1)
             	{
 					e1.printStackTrace();
 				}
         	}
-        	else
+        	else if (saveStates[x][x] == 'Z')
         	{
         		BufferedImage image = null;
         		URL file = getClass().getResource("resources/ZachNew.bmp");
             	try
             	{
 					image = ImageIO.read(file);
-					_useButton.setIcon(new ImageIcon(image));
+					buttons[x][y].setIcon(new ImageIcon(image));
 				}
             	catch (IOException e1)
             	{
 					e1.printStackTrace();
 				}
+        	}
+        	else if (saveStates[x][x] == 'E')
+        	{
+					buttons[x][y].setIcon(null);
+				
         	}
         }
     }
