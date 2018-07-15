@@ -181,6 +181,6 @@ public class GUI extends JFrame
         {
             e.printStackTrace();
         }
-        new GUI();
+        new GUI();//poop
     }
 }
