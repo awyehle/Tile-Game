@@ -47,6 +47,34 @@ public class GUI extends JFrame
                 button.addActionListener(new ButtonListener(x, y));
                 int rando = (int)(Math.random() * 10) + 1;
 
+		/*
+		int bCount;
+		int aCount;
+		int nCount;
+		int zCount;
+
+		if( bCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		{
+		_saveStates[x][y] = 'B';
+		continue;
+		}
+		if( aCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		{
+		_saveStates[x][y] = 'A';
+		continue;
+		}
+		if( nCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		{
+		_saveStates[x][y] = 'N';
+		continue;
+		}
+		if( zCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		{
+		_saveStates[x][y] = 'Z';
+		continue;
+		}
+		*/
+
                 switch(rando)
                 {
                 case 1:_saveStates[x][y] = 'B'; break;
