@@ -58,17 +58,17 @@ public class GUI extends JFrame
 		_saveStates[x][y] = 'B';
 		continue;
 		}
-		if( aCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		else if( aCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
 		{
 		_saveStates[x][y] = 'A';
 		continue;
 		}
-		if( nCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		else if( nCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
 		{
 		_saveStates[x][y] = 'N';
 		continue;
 		}
-		if( zCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
+		else if( zCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
 		{
 		_saveStates[x][y] = 'Z';
 		continue;
