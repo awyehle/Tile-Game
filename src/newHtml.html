@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<title>My HTML page</title>
+<meta charset="UTF-8">
+<script>
+var test = 0;
+function testFunc()
+{
+if(test == 0)
+{
+document.getElementById("testers").innerHTML = "BigBigButtonChange";
+test++;
+}else if(test == 1)
+{
+document.getElementById("testers").innerHTML = "My cool heading2";
+test--;
+}
+}
+</script>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<body style="color:blue;">
+
+<header>
+<h1> My cool heading1</h1>
+<p title="Test Title">Hello. This is a paragraph<b> HI </b>my friend.</p>
+<hr />
+<h1 id="testers"> My cool heading2</h1>
+</header>
+<nav>
+<ul>
+<li>
+<a href="page2.html">Click to go to page 2.</a>
+</li>
+<li>
+<a href="page2.html">Click to go to page 2.</a>
+</li>
+<li>
+<a href="page2.html">Click to go to page 2.</a>
+</li>
+ </nav>
+
+<div id="tess">
+<p title="Test Title">Hello. This is a paragraph</p>
+<a href="https://www.google.com/">This links to google.</a>
+</div>
+<br />
+<br />
+<br />
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+<br />
+<iframe src="https://inside.qg.com/Pages/default.aspx" height="700" width="1000" style="border:none;">Google</iframe>
+<hr />
+<iframe src="https://write-box.appspot.com/" name="iframe_a" width="500" height="300"></iframe>
+
+<p><a href="https://inside.qg.com/Pages/default.aspx" target="iframe_a">Goto Quad</a></p>
+
+<!-- Why would anyone want to do bidirectional overide below?? -->
+<bdo dir="rtl">This text will be written from right to left</bdo>
+
+<a href="https://www.google.com/"><img src="1.png" alt="Test!" width="100" height="100"></a>
+<br />
+<br />
+<button type="button" onclick="testFunc()">Click here</button>
+
+<ul>
+	<li>Step1</li>
+	<li>Step2</li>
+	<li>Step3</li>
+</ul>
+
+<ol>
+	<li>Step1</li>
+	<li>Step2</li>
+	<li>Step3</li>
+</ol>
+
+</body>
+</html>
