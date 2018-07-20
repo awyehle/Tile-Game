@@ -1,6 +1,31 @@
 body
 {
-	color: red;
+	color: blue;
 	background-color: lightblue;
 	box-sizing: border-box;
+}
+
+li
+{
+	font-family: "Sans-serif", Times, serif;
+	font-size: 20px;
+	display: inline;
+	padding-left:2em;
+}
+
+.navbar
+{
+	padding-left:37em;
+	
+}
+
+#content
+{
+	margin: auto;
+    width: 50%;
+    border: 3px solid green;
+	padding-top: 10em;
+	padding-bottom: 20em;
+	padding-left: 10em;
+	padding-right: 10em;
 }
