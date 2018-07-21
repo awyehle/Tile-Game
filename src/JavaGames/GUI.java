@@ -1,3 +1,5 @@
+package JavaGames;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.metal.MetalLookAndFeel;
