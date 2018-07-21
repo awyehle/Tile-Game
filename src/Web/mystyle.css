@@ -1,6 +1,6 @@
 body
 {
-	color: blue;
+	color: black;
 	background-color: lightblue;
 	box-sizing: border-box;
 }
@@ -19,7 +19,7 @@ li
 	
 }
 
-#content
+.content
 {
 	margin: auto;
     width: 50%;
@@ -29,3 +29,10 @@ li
 	padding-left: 10em;
 	padding-right: 10em;
 }
+
+header
+{
+	text-align: center;
+    border: 3px solid green;
+}
+
