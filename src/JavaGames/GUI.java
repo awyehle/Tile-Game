@@ -49,34 +49,6 @@ public class GUI extends JFrame
                 button.addActionListener(new ButtonListener(x, y));
                 int rando = (int)(Math.random() * 10) + 1;
 
-		/*
-		int bCount;
-		int aCount;
-		int nCount;
-		int zCount;
-
-		if( bCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
-		{
-		_saveStates[x][y] = 'B';
-		continue;
-		}
-		else if( aCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
-		{
-		_saveStates[x][y] = 'A';
-		continue;
-		}
-		else if( nCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
-		{
-		_saveStates[x][y] = 'N';
-		continue;
-		}
-		else if( zCount % 2 != 0 && x ==7 && _saveStates[x][y] == '')
-		{
-		_saveStates[x][y] = 'Z';
-		continue;
-		}
-		*/
-
                 switch(rando)
                 {
                 case 1:_saveStates[x][y] = 'B'; break;
@@ -90,6 +62,33 @@ public class GUI extends JFrame
                 case 9:_saveStates[x][y] = 'A'; break;
                 default:_saveStates[x][y] = 'Z'; break;
                 }
+                
+                int bCount = 0;
+                int aCount = 0;
+                int nCount = 0;
+                int zCount = 0;
+        		bCount = _saveStates[x][y] == 'B' ? bCount++ : bCount;
+        		aCount = _saveStates[x][y] == 'A' ? aCount++ : aCount;
+        		nCount = _saveStates[x][y] == 'N' ? nCount++ : nCount;
+        		zCount = _saveStates[x][y] == 'Z' ? zCount++ : zCount;
+
+        		if( bCount % 2 != 0 && x ==7 && _saveStates[x][y] != 'B')
+        		{
+        		_saveStates[x][y] = 'B';
+        		}
+        		else if( aCount % 2 != 0 && x ==7 && _saveStates[x][y] != 'A')
+        		{
+        		_saveStates[x][y] = 'A';
+        		}
+        		else if( nCount % 2 != 0 && x ==7 && _saveStates[x][y] != 'N')
+        		{
+        		_saveStates[x][y] = 'N';
+        		}
+        		else if( zCount % 2 != 0 && x ==7 && _saveStates[x][y] != 'Z')
+        		{
+        		_saveStates[x][y] = 'Z';
+        		}
+                
                 _panel1.add(button);
                 _buttons[x][y] = button;
             }
@@ -174,10 +173,10 @@ public class GUI extends JFrame
 			BufferedImage andrewImage = null;
 			BufferedImage zachImage = null;
 			try {
-				bethImage = ImageIO.read(getClass().getResource("resources/BethNew.bmp"));
-				noahImage = ImageIO.read(getClass().getResource("resources/NoahNew.bmp"));
-				andrewImage = ImageIO.read(getClass().getResource("resources/AndrewNew.bmp"));
-				zachImage = ImageIO.read(getClass().getResource("resources/ZachNew.bmp"));
+				bethImage = ImageIO.read(getClass().getResource("../resources/BethNew.bmp"));
+				noahImage = ImageIO.read(getClass().getResource("../resources/NoahNew.bmp"));
+				andrewImage = ImageIO.read(getClass().getResource("../resources/AndrewNew.bmp"));
+				zachImage = ImageIO.read(getClass().getResource("../resources/ZachNew.bmp"));
 			} catch (IOException error) {}
 				switch(_saveStates[x][y])
 				{
