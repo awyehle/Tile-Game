@@ -72,6 +72,7 @@ public class GUI extends JFrame
         		nCount = _saveStates[x][y] == 'N' ? nCount++ : nCount;
         		zCount = _saveStates[x][y] == 'Z' ? zCount++ : zCount;
 
+        		//This didnt fix it. Debug better next time
         		if( bCount % 2 != 0 && x ==7 && _saveStates[x][y] != 'B')
         		{
         		_saveStates[x][y] = 'B';
