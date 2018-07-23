@@ -63,6 +63,91 @@ public class GUI extends JFrame
                 default:_saveStates[x][y] = 'Z'; break;
                 }
                 
+		/*
+		while(aCount % 2 != 0)
+{
+	randox = Math.random;
+	randoy = Math.random;
+	if(saveStates[randox][randoy] != 'A')
+	{
+	saveStates[rando][rando] = 'A';
+	aCount++;
+	
+		switch(saveStates[randox][randoy])
+	{
+	case 'B': bCount--; break;
+	case 'N': nCount--; break;
+	case 'Z': zCount--; break;
+	
+	}
+	
+	}
+}
+
+while(bCount % 2 != 0)
+{
+	randox = Math.random;
+	randoy = Math.random;
+	if(saveStates[randox][randoy] != ('A' || 'B') )
+	{
+	saveStates[rando][rando] = 'B';
+	bCount++;
+	
+			switch(saveStates[randox][randoy])
+	{
+	case 'B': bCount--; break;
+	case 'N': nCount--; break;
+	case 'Z': zCount--; break;
+	
+	}
+	
+	}
+}
+
+while(nCount % 2 != 0)
+{
+	randox = Math.random;
+	randoy = Math.random;
+	if(saveStates[randox][randoy] != ('A' || 'B' || 'N') )
+	{
+	saveStates[rando][rando] = 'N';
+	nCount++;
+	
+			switch(saveStates[randox][randoy])
+	{
+	case 'B': bCount--; break;
+	case 'N': nCount--; break;
+	case 'Z': zCount--; break;
+	
+	}
+	
+	}
+}
+
+while(zCount % 2 != 0)
+{
+	randox = Math.random;
+	randoy = Math.random;
+	if(saveStates[randox][randoy] != ('A' || 'B' || 'N') )
+	{
+	saveStates[rando][rando] = 'N';
+	nCount++;
+	
+			switch(saveStates[randox][randoy])
+	{
+	case 'B': bCount--; break;
+	case 'N': nCount--; break;
+	case 'Z': zCount--; break;
+	
+	}
+	
+	}
+}
+		
+		*/
+		
+		
+		
                 int bCount = 0;
                 int aCount = 0;
                 int nCount = 0;
