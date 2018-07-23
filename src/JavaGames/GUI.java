@@ -146,6 +146,46 @@ while(zCount % 2 != 0)
 		
 		*/
 		
+		/*
+int[] counts;
+
+
+int carry = 0;
+foreach(int type = 0; type <4; type++)
+{
+	char ind = '';
+	switch(type)
+	{
+	case 0: ind = 'A'; break;
+	case 1: ind = 'B'; break;
+	case 2: ind = 'N'; break;
+	case 3: ind = 'Z'; break;
+	}
+
+	if (count[type] % 2 != 0 && carry == 0)
+	{
+		carry++;
+		int randox = Math.random();
+		int randoy = Math.random();
+		while(saveStates[randox][randoy] != ind);
+		{
+			randox = Math.random();
+			randoy = Math.random();
+		}
+		saveStates[randox][randoy] = ind;
+	}
+	else if(count[type] % 2 != 0 && carry > 0)
+	{
+	carry--;
+	counts[type]--;
+	}
+}
+
+if carry != 0 System.out.print("BAD);
+
+}
+
+*/
 		
 		
                 int bCount = 0;
